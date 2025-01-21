@@ -5,6 +5,7 @@ export const fetchData = async () => {
   return response.data;
 };
 
-export const searchIssues = async (texto, username, repo) => {
-  const response = await axios.get(`https://api.github.com/search/issues?q=${texto}%20repo:${username}/${repo}`)
+export const searchIssues = async () => {
+  const issues = await axios.get(`https://api.github.com/search/issues?q=Teste%20repo:matheuscobz/github-blog-vite`)
+  return issues.data;
 }

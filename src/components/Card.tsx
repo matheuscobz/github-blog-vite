@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchData } from "../api/Github";
+import { fetchData, } from "../api/Github";
 import githubIcon from "../assets/Github-icon.svg";
 import workingIcon from "../assets/Working-icon.svg";
 import followersIcon from "../assets/Followers-icon.svg";
@@ -15,6 +15,7 @@ export default function Card(){
     };
 
     getData();
+    
   }, []);
 
   return (
@@ -23,12 +24,12 @@ export default function Card(){
         <img src={ profileData.avatar_url } className="size-fit rounded " alt="" />
       </div>
       <div className="mx-8 flex flex-col ">
-        <p className="text-[#E7EDF4] mb-2 text-2xl font-bold tracking-wider">{ profileData.name }</p>
+        <p className="text-[#E7EDF4] mb-2 text-2xl font-bold tracking-wider">{profileData.name }</p>
         <p className="mb-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam ipsum dicta eius voluptatibus quasi mollitia magni qui sunt. A tempora magnam excepturi aliquam quod. Deleniti corporis ducimus vel ad recusandae?</p>
         <div className="flex gap-12">
-          <div className="flex gap-2 items-center justify-center">
-            <img className="size-5" src={githubIcon} alt="" />
-            <a href="">{ profileData.login}</a>
+          <div className="flex gap-2 items-center justify-center ">
+            <img className="size-5 " src={githubIcon} alt="" />
+            <a className="hover:text-blue-300" href="https://github.com/matheuscobz" target="_blank">{profileData.login}</a>
           </div>
           <div className="flex gap-2 items-center justify-center">
             <img src={workingIcon} alt="" />
